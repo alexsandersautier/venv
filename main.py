@@ -11,7 +11,7 @@ day_publication = datetime.strptime(constant.DATE, '%d/%m/%Y').date()
 hours = constant.SCHEDULES
 SelectedDay = False
 first = False
-m = 1
+m = 0
 try:
     for day in range(constant.TIMES):
         k = 0
@@ -58,7 +58,7 @@ try:
             #write message
             if m > constant.MESSAGES[len(constant.MESSAGES)-1]:
                 m = 1
-            with open(f'mensagem{m}.txt', encoding="utf8") as chat:
+            with open(f'mensagem{constant.MESSAGES[m]}.txt', encoding="utf8") as chat:
                 chat_text = chat.read()
             pyperclip.copy(chat_text)       
             py.hotkey('ctrl','v')        
