@@ -56,8 +56,8 @@ try:
             #click message box
             py.hotkey('tab')
             #write message
-            if m > constant.MESSAGES[len(constant.MESSAGES)-1]:
-                m = 1
+            if m > len(constant.MESSAGES)-1:
+                m = 0
             with open(f'mensagem{constant.MESSAGES[m]}.txt', encoding="utf8") as chat:
                 chat_text = chat.read()
             pyperclip.copy(chat_text)       
